@@ -46,7 +46,7 @@
 <script>
 import Identify from './Identify'
 import { NumberKeyboard } from 'vant'
-
+import { axiosLogin } from '../util/Api'
 export default{
     data(){
         return{
@@ -89,6 +89,25 @@ export default{
                 this.refreshCode();
                 return
             }else{
+                var uname=this.uname;
+                var upwd = this.upwd;
+                this.axios.get("login",{params:{
+                    uname,upwd
+                }}).then(res=>{
+                    console.log(res.data.data);
+                    if(res.data.code==1){
+                        let uid = res.data.data.id
+                        this.uid=uid
+                        sessionStorage.setItem("uid",uid)
+                        this.$router.go()
+                    }
+                    // res.data
+                })
+                // axiosLogin('login',{data:{
+                //     uname,upwd
+                // }}).then(res=>{
+                //     console.log(res);
+                // })
                 //验证完成上后带用户名密码发axios去数据库查询是否存在用户
                 //返回用户信息跳转到首页,将uid存在session中
             }

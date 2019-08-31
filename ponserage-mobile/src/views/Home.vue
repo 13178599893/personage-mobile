@@ -15,8 +15,8 @@
             </div>
             <!-- 个人信息面板 -->
             <div v-else>
-                <lyl-login v-if="uid==null"></lyl-login>
-                <lyl-personal v-else></lyl-personal>
+                <lyl-login v-show="uid==null"></lyl-login>
+                <lyl-personal v-show="uid!=null"></lyl-personal>
             </div>
         </div>
         <!-- 底部导航栏 -->
@@ -86,12 +86,19 @@ export default {
             let tmp = sessionStorage.getItem('actived')
             if(tmp){
                 this.actived = tmp;
-            }
-                
+            } 
           },
+          selectUid(){
+             this.uid = sessionStorage.getItem("uid")
+             console.log(this.uid);
+          }
+      },
+      created(){
+            this.selectUid()
       },
       mounted(){
           this.getMyactive()
+          
       },
       watch:{
          actived() {

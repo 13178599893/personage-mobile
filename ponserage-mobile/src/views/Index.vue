@@ -65,14 +65,8 @@
             <!-- mint ui轮播图 -->
             <div class="banner">
                 <mt-swipe :auto="3000">
-                    <mt-swipe-item>
-                        <img height="200px" src="../assets/img/banner_test.jpg" alt="">
-                    </mt-swipe-item>
-                    <mt-swipe-item>
-                        <img height="200px" src="../assets/img/banner_test.jpg" alt="">
-                    </mt-swipe-item>
-                    <mt-swipe-item>
-                        <img height="200px" src="../assets/img/banner_test.jpg" alt="">
+                    <mt-swipe-item v-for="(img,i) of imgs" :key="i">
+                        <img height="200px" :src="'http://127.0.0.1:3000/img/banner2/'+img.url" alt="">
                     </mt-swipe-item>
                 </mt-swipe>
             </div>
@@ -235,10 +229,18 @@ export default {
     data(){
         return{
             showMask:false,
-            MarginR:{right:-220}
+            MarginR:{right:-220},
+            imgs:[]
         }
     },
     methods:{
+        getImg(){
+            this.axios.get('banner2').then(res=>{
+                this.imgs = res.data
+                console.log(res.data)
+            })
+        },
+        
         moveNavbbar(){
             this.showMask=true;
             this.MarginR.right=-10+'px'
@@ -254,8 +256,12 @@ export default {
             sessionStorage.setItem("actived","tab2")
            
         }
+        },
+        created(){
+            this.getImg()
+        }
     }
-}
+
 </script>
 <style scoped>
 @media screen and (max-width:375px ) {

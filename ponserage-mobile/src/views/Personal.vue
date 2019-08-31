@@ -60,7 +60,7 @@
                 <img src="../assets/img/information_right.png" alt="">
             </div>
             <div class="myFooter">
-                <button>退出登录</button>
+                <button @click="outLogin">退出登录</button>
             </div>
         </div>
     </div>
@@ -70,6 +70,13 @@ export default {
     data(){
         return{
 
+        }
+    },
+    methods:{
+        outLogin(){
+            sessionStorage.removeItem("uid")
+            sessionStorage.setItem("actived","tab4")
+            this.$router.go()
         }
     }
 }

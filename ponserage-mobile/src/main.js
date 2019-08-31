@@ -8,10 +8,12 @@ import Carousel from './components/carousel'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import { NumberKeyboard } from 'vant';
+import axios from 'axios'
 import 'vant/lib/index.css';
 Vue.use(NumberKeyboard);
 Vue.use(ElementUI);
-
+Vue.prototype.axios=axios;
+axios.defaults.baseURL="http://127.0.0.1:3000/"
 
 
 

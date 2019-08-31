@@ -5,10 +5,10 @@
             <span class="btn-left" :disabled="canClick" @click="move(-1)"><img src="../assets/img/btn_left.png" alt=""></span>
             <ul :style="Position" :class="{'hasTrans':showTrans}">
                 <li v-for="(img,i) of imgs" :key="i">
-                    <img :src="img.src" alt="">
+                    <img :src="'http://127.0.0.1:3000/img/banner1/'+img.url" alt="">
                 </li>
                 <li>
-                    <img :src="imgs[0].src" alt="">
+                    <img :src="'http://127.0.0.1:3000/img/banner1/'+imgs[0].url" alt="">
                 </li>
             </ul>
             <span class="btn-right" @click="move(1)"><img src="../assets/img/btn_right.png" alt=""></span>
@@ -21,13 +21,19 @@ export default {
     data(){
         return{
             i:0,
-            imgs:[{src:require('../assets/img/banner_test.jpg')},{src:require('../assets/img/banner_test.jpg')},{src:require('../assets/img/banner_test.jpg')},{src:require('../assets/img/banner_test.jpg')}],
+            imgs:[{url:""}],
             showTrans:true,
             moveWidth:'355',
             canClick:true
         }
     },
     methods:{
+        getImg(){
+            this.axios.get('banner').then(res=>{
+                this.imgs = res.data
+                console.log(res.data)
+            })
+        },
         move(i){
             if(this.canClick){
                 this.canClick=false;
@@ -70,6 +76,9 @@ export default {
             // },600)
             }
         }
+    },
+    created(){
+        this.getImg()
     },
     computed:{
         Position(){
