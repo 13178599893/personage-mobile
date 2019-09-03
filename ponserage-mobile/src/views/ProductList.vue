@@ -12,7 +12,7 @@
                     <span>{{p.title}}</span>
                     <span>{{p.details}}</span>
                     <span>¥{{p.price}}.00</span>
-                    <span @click="showDetails">立即抢购</span>
+                    <span @click="showDetails" :data-id=p.id >立即抢购</span>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
             <!-- 遮罩 -->
         </div>
         <div class="myDetails" :style="myPosition">
-             <lyl-details></lyl-details>
+             <lyl-details :pid=pid></lyl-details>
         </div>
     </div>
 </template>
@@ -33,13 +33,15 @@ export default {
             list:[],
             showdetails:false,
             myPosition:{top:"720px"},
-            mytitle:""
+            mytitle:"",
+            pid:""
         }
     },
     methods:{
-        showDetails(){
+        showDetails(e){
             this.showdetails=true;
             this.myPosition.top=125+"px"
+            this.pid = e.target.dataset.id
         },
         hideDetails(){
              this.showdetails=false;
@@ -168,7 +170,7 @@ export default {
     left:0;
     width: 375px;
     height: 677px;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.7);
 }
 }
 </style>

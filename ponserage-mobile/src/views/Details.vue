@@ -2,29 +2,23 @@
     <div class="contain">
         <div class="detailsBody">
             <div class="detailsTitle">
-                <span>标题</span>
+                <span>{{list.title}}</span>
             </div>
             <div>
                 <!-- mint ui轮播图 -->
                 <div class="banner">
                     <mt-swipe :auto="3000">
-                        <mt-swipe-item>
-                            <img height="200px" src="../assets/img/banner_test.jpg" alt="">
-                        </mt-swipe-item>
-                        <mt-swipe-item>
-                            <img height="200px" src="../assets/img/banner_test.jpg" alt="">
-                        </mt-swipe-item>
-                        <mt-swipe-item>
-                            <img height="200px" src="../assets/img/banner_test.jpg" alt="">
+                        <mt-swipe-item v-for="(img,i) of bannerimg" :key="i">
+                            <img :src="'http://127.0.0.1:3000/img/product/'+img" alt="">
                         </mt-swipe-item>
                     </mt-swipe>
                 </div>
             </div>
             <div class="detailsTxt">
-                <span>春季新款男士休闲上衣韩版纯棉纯色圆领T恤男时尚男装</span>
+                <span>{{list.details}}</span>
             </div>
             <div class="detailsPrice">
-                <span>¥199.00</span>
+                <span>¥ {{list.price}}.00</span>
             </div>
             <div class="deatailsMsg">
                 <span>商品单位: 件</span>
@@ -33,7 +27,7 @@
                 <span>产品说明</span>
             </div>
             <div class="detailsImg">
-                <img v-for="(p,i) in 10" :key="i" src="../assets/img/details_test.jpg" alt="">
+                <img v-for="(img,i) of detailsimg" :key="i" :src="'http://127.0.0.1:3000/img/product/'+img" alt="">
             </div>
             <div class="detailFooter">
                 <div class="detailsFooterLeft">
@@ -44,17 +38,82 @@
                     <img src="../assets/img/tabbar_cart_select.png" alt="">
                     <p style="margin:0;font-size:12px">购物车</p>
                 </div>
-                <span>加入购物车</span>
+                <span @click="joincart">加入购物车</span>
                 <span>立即购买</span>
             </div>
         </div>
     </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
     data(){
         return{
+            bannerimg:[],
+            detailsimg:[],
+            list:{},
+            uid:null
+        }
+    },
+    props:[
+        "pid"
+    ],
+    methods:{
+        joincart(){
+                let pid,uid,title,details,price,img_url,count,isshow;
+                this.uid = sessionStorage.getItem("uid");
+                var tmp =qs.stringify({
+                pid : this.list.id,
+                title : this.list.title,
+                uid:this.uid,
+                details : this.list.details,
+                price : this.list.price,
+                img_url : this.list.img_url,
+                count:1,
+                isshow : 1
+            })
+            // console.log(tmp.uid);
+            if(this.uid==null){
+                this.$toast({
+                    message:"请先登录",
+                    position:"bottom"
+                });
+                sessionStorage.setItem("actived","tab4")
+                this.$router.push('/')
+                return
+            }else{
+                this.axios.post('cart',tmp).then(res=>{
+                    console.log(res);
+                     this.$toast({
+                    message:"已成功添加到购物车",
+                    position:"bottom"
+                });
+                })
+            }
+        },
+        getDetails(){
+            this.axios.get("details",{params:{
+                pid:this.pid
+            }}).then(res=>{
+                console.log(res);
+                this.list = res.data[0]
+                 this.bannerimg = this.list.banner_img.split(",")
+                 this.detailsimg = this.list.details_img.split(",")
+            })
+        }
+    },
+    created(){
+       
+    },
+    mounted(){
 
+    },
+    computed:{
+        
+    },
+    watch:{
+        pid(){
+            this.getDetails();
         }
     }
 }
@@ -69,10 +128,11 @@ export default {
 }
 #app .contain{
     margin:0;
-    
+    /* overflow: hidden; */
 }
 #app .contain .detailsBody{
     background: #fff;
+    padding-top:30px;
     height: 545px;
     width: 375PX;
     border-top-left-radius: 15px;
@@ -81,7 +141,17 @@ export default {
     overflow: scroll;
 }
 #app .contain .detailsTitle{
-    padding-top:10px;
+    padding:5px 0px 5px 0px;
+    position: absolute;
+    /* width: 100%; */
+    width: 376px;
+    top:0;
+    left:52.6%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transform: translateX(-50%);
+    background: #fff;
+    z-index: 20;
 }
 #app .contain .detailsTitle span{
     font-size: 25px;
@@ -89,7 +159,7 @@ export default {
     font-weight: bolder;
 }
 #app .contain .detailsBody .banner{
-    height: 200px;
+    height: 400px;
     margin-top: 10px;
     /* border-top-right-radius:20px;
     border-top-left-radius:20px; */
@@ -138,7 +208,7 @@ export default {
     display: flex;
     position: absolute;
     z-index: 50;
-    bottom:0;
+    bottom:30px;
     box-sizing: border-box;
     padding:5px 0;
     align-items: center;

@@ -11,6 +11,12 @@ const selectpim = require("./routes/getpim")
 const index = require("./routes/index")
 const product = require("./routes/product")
 const shopclass = require("./routes/class")
+const details = require("./routes/details")
+const cart = require("./routes/cart")
+const getcart = require("./routes/getcart")
+const addcount = require("./routes/addcount")
+const selectcount = require("./routes/selectcount")
+const delshop = require("./routes/delshop")
 
 var server=express();
 server.use(express.static("public"));
@@ -27,12 +33,19 @@ server.use(session({
     saveUninitialized:true,
 }))
 server.use(bodyParser.urlencoded({extended:false}))
+
 server.use("/reg",reg);
 server.use("/login",login);
 server.use("/selectpim",selectpim)
 server.use("/index",index)
 server.use("/product",product)
 server.use("/shopclass",shopclass)
+server.use("/details",details)
+server.use("/getcart",getcart)
+server.use("/cart",cart)
+server.use("/addcount",addcount)
+server.use("/selectcount",selectcount)
+server.use("/delshop",delshop)
 server.use("/banner",banner)
 server.use("/banner2",banner2)
 

@@ -97,6 +97,22 @@ INSERT INTO lyl_productlist VALUES
 (NULL,'p_81.jpg,p_82.jpg,p_83.jpg','长袖卫衣','长袖卫衣男2019新款春秋装衣服宽松潮牌潮流秋季上衣男装卫衣',89,'p_81.jpg','pd_81.jpg,pd_82.jpg,pd_83.jpg,pd_84.jpg,pd_85.jpg,pd_86.jpg,pd_87.jpg,pd_88.jpg,pd_89.jpg,pd_810.jpg','卫衣'),
 (NULL,'p_71.jpg,p_72.jpg,p_73.jpg','长袖卫衣','男士长袖卫衣2019新款潮流秋季韩版宽松ins圆领卫衣男装潮牌秋衣服',89,'p_71.jpg','pd_71.jpg,pd_72.jpg,pd_73.jpg,pd_74.jpg,pd_75.jpg,pd_76.jpg,pd_77.jpg,pd_78.jpg,pd_79.jpg,pd_710.jpg','卫衣'),
 (NULL,'p_81.jpg,p_82.jpg,p_83.jpg','长袖卫衣','长袖卫衣男2019新款春秋装衣服宽松潮牌潮流秋季上衣男装卫衣',89,'p_81.jpg','pd_81.jpg,pd_82.jpg,pd_83.jpg,pd_84.jpg,pd_85.jpg,pd_86.jpg,pd_87.jpg,pd_88.jpg,pd_89.jpg,pd_810.jpg','卫衣'),
+(NULL,'p_71.jpg,p_72.jpg,p_73.jpg','长袖卫衣','男士长袖卫衣2019新款潮流秋季韩版宽松ins圆领卫衣男装潮牌秋衣服',89,'p_71.jpg','pd_71.jpg,pd_72.jpg,pd_73.jpg,pd_74.jpg,pd_75.jpg,pd_76.jpg,pd_77.jpg,pd_78.jpg,pd_79.jpg,pd_710.jpg','卫衣'),
+(NULL,'p_81.jpg,p_82.jpg,p_83.jpg','长袖卫衣','长袖卫衣男2019新款春秋装衣服宽松潮牌潮流秋季上衣男装卫衣',89,'p_81.jpg','pd_81.jpg,pd_82.jpg,pd_83.jpg,pd_84.jpg,pd_85.jpg,pd_86.jpg,pd_87.jpg,pd_88.jpg,pd_89.jpg,pd_810.jpg','卫衣'),
+(NULL,'p_71.jpg,p_72.jpg,p_73.jpg','长袖卫衣','男士长袖卫衣2019新款潮流秋季韩版宽松ins圆领卫衣男装潮牌秋衣服',89,'p_71.jpg','pd_71.jpg,pd_72.jpg,pd_73.jpg,pd_74.jpg,pd_75.jpg,pd_76.jpg,pd_77.jpg,pd_78.jpg,pd_79.jpg,pd_710.jpg','卫衣'),
+(NULL,'p_81.jpg,p_82.jpg,p_83.jpg','长袖卫衣','长袖卫衣男2019新款春秋装衣服宽松潮牌潮流秋季上衣男装卫衣',89,'p_81.jpg','pd_81.jpg,pd_82.jpg,pd_83.jpg,pd_84.jpg,pd_85.jpg,pd_86.jpg,pd_87.jpg,pd_88.jpg,pd_89.jpg,pd_810.jpg','卫衣'),
+(NULL,'p_91.jpg,p_92.jpg,p_93.jpg','休闲西装','休闲西装xifu西服单件爸爸男士nans中年人便衣nan穿外套2019男士',199,'p_91.jpg','pd_91.jpg,pd_92.jpg,pd_93.jpg,pd_94.jpg,pd_95.jpg,pd_96.jpg,pd_97.jpg,pd_98.jpg,pd_99.jpg,pd_910.jpg','西服'),
+(NULL,'p_101.jpg,p_102.jpg,p_103.jpg','休闲西装','lr老人秋冬休闲西服xifu单件爸爸男士nans中老年人穿羊毛外套西装',218,'p_101.jpg','pd_101.jpg,pd_102.jpg,pd_103.jpg,pd_104.jpg,pd_105.jpg,pd_106.jpg,pd_107.jpg,pd_108.jpg,pd_109.jpg,pd_1010.jpg','西服'),
+(NULL,'p_91.jpg,p_92.jpg,p_93.jpg','休闲西装','休闲西装xifu西服单件爸爸男士nans中年人便衣nan穿外套2019男士',199,'p_91.jpg','pd_91.jpg,pd_92.jpg,pd_93.jpg,pd_94.jpg,pd_95.jpg,pd_96.jpg,pd_97.jpg,pd_98.jpg,pd_99.jpg,pd_910.jpg','西服'),
+(NULL,'p_101.jpg,p_102.jpg,p_103.jpg','休闲西装','lr老人秋冬休闲西服xifu单件爸爸男士nans中老年人穿羊毛外套西装',218,'p_101.jpg','pd_101.jpg,pd_102.jpg,pd_103.jpg,pd_104.jpg,pd_105.jpg,pd_106.jpg,pd_107.jpg,pd_108.jpg,pd_109.jpg,pd_1010.jpg','西服'),
+(NULL,'p_91.jpg,p_92.jpg,p_93.jpg','休闲西装','休闲西装xifu西服单件爸爸男士nans中年人便衣nan穿外套2019男士',199,'p_91.jpg','pd_91.jpg,pd_92.jpg,pd_93.jpg,pd_94.jpg,pd_95.jpg,pd_96.jpg,pd_97.jpg,pd_98.jpg,pd_99.jpg,pd_910.jpg','西服'),
+(NULL,'p_101.jpg,p_102.jpg,p_103.jpg','休闲西装','lr老人秋冬休闲西服xifu单件爸爸男士nans中老年人穿羊毛外套西装',218,'p_101.jpg','pd_101.jpg,pd_102.jpg,pd_103.jpg,pd_104.jpg,pd_105.jpg,pd_106.jpg,pd_107.jpg,pd_108.jpg,pd_109.jpg,pd_1010.jpg','西服'),
+(NULL,'p_91.jpg,p_92.jpg,p_93.jpg','休闲西装','休闲西装xifu西服单件爸爸男士nans中年人便衣nan穿外套2019男士',199,'p_91.jpg','pd_91.jpg,pd_92.jpg,pd_93.jpg,pd_94.jpg,pd_95.jpg,pd_96.jpg,pd_97.jpg,pd_98.jpg,pd_99.jpg,pd_910.jpg','西服'),
+(NULL,'p_101.jpg,p_102.jpg,p_103.jpg','休闲西装','lr老人秋冬休闲西服xifu单件爸爸男士nans中老年人穿羊毛外套西装',218,'p_101.jpg','pd_101.jpg,pd_102.jpg,pd_103.jpg,pd_104.jpg,pd_105.jpg,pd_106.jpg,pd_107.jpg,pd_108.jpg,pd_109.jpg,pd_1010.jpg','西服'),
+(NULL,'p_91.jpg,p_92.jpg,p_93.jpg','休闲西装','休闲西装xifu西服单件爸爸男士nans中年人便衣nan穿外套2019男士',199,'p_91.jpg','pd_91.jpg,pd_92.jpg,pd_93.jpg,pd_94.jpg,pd_95.jpg,pd_96.jpg,pd_97.jpg,pd_98.jpg,pd_99.jpg,pd_910.jpg','西服'),
+(NULL,'p_101.jpg,p_102.jpg,p_103.jpg','休闲西装','lr老人秋冬休闲西服xifu单件爸爸男士nans中老年人穿羊毛外套西装',218,'p_101.jpg','pd_101.jpg,pd_102.jpg,pd_103.jpg,pd_104.jpg,pd_105.jpg,pd_106.jpg,pd_107.jpg,pd_108.jpg,pd_109.jpg,pd_1010.jpg','西服'),
+(NULL,'p_91.jpg,p_92.jpg,p_93.jpg','休闲西装','休闲西装xifu西服单件爸爸男士nans中年人便衣nan穿外套2019男士',199,'p_91.jpg','pd_91.jpg,pd_92.jpg,pd_93.jpg,pd_94.jpg,pd_95.jpg,pd_96.jpg,pd_97.jpg,pd_98.jpg,pd_99.jpg,pd_910.jpg','西服'),
+(NULL,'p_101.jpg,p_102.jpg,p_103.jpg','休闲西装','lr老人秋冬休闲西服xifu单件爸爸男士nans中老年人穿羊毛外套西装',218,'p_101.jpg','pd_101.jpg,pd_102.jpg,pd_103.jpg,pd_104.jpg,pd_105.jpg,pd_106.jpg,pd_107.jpg,pd_108.jpg,pd_109.jpg,pd_1010.jpg','西服'),
 (NULL,'p_91.jpg,p_92.jpg,p_93.jpg','休闲西装','休闲西装xifu西服单件爸爸男士nans中年人便衣nan穿外套2019男士',199,'p_91.jpg','pd_91.jpg,pd_92.jpg,pd_93.jpg,pd_94.jpg,pd_95.jpg,pd_96.jpg,pd_97.jpg,pd_98.jpg,pd_99.jpg,pd_910.jpg','西服'),
 (NULL,'p_101.jpg,p_102.jpg,p_103.jpg','休闲西装','lr老人秋冬休闲西服xifu单件爸爸男士nans中老年人穿羊毛外套西装',218,'p_101.jpg','pd_101.jpg,pd_102.jpg,pd_103.jpg,pd_104.jpg,pd_105.jpg,pd_106.jpg,pd_107.jpg,pd_108.jpg,pd_109.jpg,pd_1010.jpg','西服'),
 (NULL,'p_91.jpg,p_92.jpg,p_93.jpg','休闲西装','休闲西装xifu西服单件爸爸男士nans中年人便衣nan穿外套2019男士',199,'p_91.jpg','pd_91.jpg,pd_92.jpg,pd_93.jpg,pd_94.jpg,pd_95.jpg,pd_96.jpg,pd_97.jpg,pd_98.jpg,pd_99.jpg,pd_910.jpg','西服'),
@@ -133,9 +149,28 @@ INSERT INTO lyl_productlist VALUES
 (NULL,'p_161.jpg,p_162.jpg,p_163.jpg','休闲裤','裤子男韩版潮流修身黑色男士休闲裤九分男裤秋季长裤小脚西裤男',99,'p_161.jpg','pd_161.jpg,pd_162.jpg,pd_163.jpg,pd_164.jpg,pd_165.jpg,pd_166.jpg,pd_167.jpg,pd_168.jpg,pd_169.jpg,pd_1610.jpg','休闲裤'),
 (NULL,'p_151.jpg,p_152.jpg,p_153.jpg','休闲裤','男装 EZY束脚工装运动裤 420806 优衣库UNIQLO',249,'p_151.jpg','pd_151.jpg,pd_152.jpg,pd_153.jpg,pd_154.jpg,pd_155.jpg,pd_156.jpg,pd_157.jpg,pd_158.jpg','休闲裤'),
 (NULL,'p_161.jpg,p_162.jpg,p_163.jpg','休闲裤','裤子男韩版潮流修身黑色男士休闲裤九分男裤秋季长裤小脚西裤男',99,'p_161.jpg','pd_161.jpg,pd_162.jpg,pd_163.jpg,pd_164.jpg,pd_165.jpg,pd_166.jpg,pd_167.jpg,pd_168.jpg,pd_169.jpg,pd_1610.jpg','休闲裤'),
+(NULL,'p_171.jpg,p_172.jpg,p_173.jpg','针织衫','2019秋冬季新款男士圆领针织衫长袖毛衣男韩版潮流修身毛衣上衣服',89,'p_171.jpg','pd_171.jpg,pd_172.jpg,pd_173.jpg,pd_174.jpg,pd_175.jpg,pd_176.jpg,pd_177.jpg,pd_178.jpg,pd_179.jpg,pd_1710.jpg','针织衫'),
+(NULL,'p_181.jpg,p_182.jpg,p_183.jpg','针织衫','日系学院风撞色条纹海魂长袖毛衣 韩国港风男女宽松BF风ins针织衫',85,'p_181.jpg','pd_181.jpg,pd_182.jpg,pd_183.jpg,pd_184.jpg,pd_185.jpg,pd_186.jpg,pd_187.jpg,pd_188.jpg,pd_189.jpg,pd_1810.jpg','针织衫'),
+(NULL,'p_171.jpg,p_172.jpg,p_173.jpg','针织衫','2019秋冬季新款男士圆领针织衫长袖毛衣男韩版潮流修身毛衣上衣服',89,'p_171.jpg','pd_171.jpg,pd_172.jpg,pd_173.jpg,pd_174.jpg,pd_175.jpg,pd_176.jpg,pd_177.jpg,pd_178.jpg,pd_179.jpg,pd_1710.jpg','针织衫'),
+(NULL,'p_181.jpg,p_182.jpg,p_183.jpg','针织衫','日系学院风撞色条纹海魂长袖毛衣 韩国港风男女宽松BF风ins针织衫',85,'p_181.jpg','pd_181.jpg,pd_182.jpg,pd_183.jpg,pd_184.jpg,pd_185.jpg,pd_186.jpg,pd_187.jpg,pd_188.jpg,pd_189.jpg,pd_1810.jpg','针织衫'),
 (NULL,'p_171.jpg,p_172.jpg,p_173.jpg','针织衫','2019秋冬季新款男士圆领针织衫长袖毛衣男韩版潮流修身毛衣上衣服',89,'p_171.jpg','pd_171.jpg,pd_172.jpg,pd_173.jpg,pd_174.jpg,pd_175.jpg,pd_176.jpg,pd_177.jpg,pd_178.jpg,pd_179.jpg,pd_1710.jpg','针织衫'),
 (NULL,'p_181.jpg,p_182.jpg,p_183.jpg','针织衫','日系学院风撞色条纹海魂长袖毛衣 韩国港风男女宽松BF风ins针织衫',85,'p_181.jpg','pd_181.jpg,pd_182.jpg,pd_183.jpg,pd_184.jpg,pd_185.jpg,pd_186.jpg,pd_187.jpg,pd_188.jpg,pd_189.jpg,pd_1810.jpg','针织衫'),
 (NULL,'p_171.jpg,p_172.jpg,p_173.jpg','针织衫','2019秋冬季新款男士圆领针织衫长袖毛衣男韩版潮流修身毛衣上衣服',89,'p_171.jpg','pd_171.jpg,pd_172.jpg,pd_173.jpg,pd_174.jpg,pd_175.jpg,pd_176.jpg,pd_177.jpg,pd_178.jpg,pd_179.jpg,pd_1710.jpg','针织衫'),
 (NULL,'p_181.jpg,p_182.jpg,p_183.jpg','针织衫','日系学院风撞色条纹海魂长袖毛衣 韩国港风男女宽松BF风ins针织衫',85,'p_181.jpg','pd_181.jpg,pd_182.jpg,pd_183.jpg,pd_184.jpg,pd_185.jpg,pd_186.jpg,pd_187.jpg,pd_188.jpg,pd_189.jpg,pd_1810.jpg','针织衫'),
 (NULL,'p_171.jpg,p_172.jpg,p_173.jpg','针织衫','2019秋冬季新款男士圆领针织衫长袖毛衣男韩版潮流修身毛衣上衣服',89,'p_171.jpg','pd_171.jpg,pd_172.jpg,pd_173.jpg,pd_174.jpg,pd_175.jpg,pd_176.jpg,pd_177.jpg,pd_178.jpg,pd_179.jpg,pd_1710.jpg','针织衫'),
 (NULL,'p_181.jpg,p_182.jpg,p_183.jpg','针织衫','日系学院风撞色条纹海魂长袖毛衣 韩国港风男女宽松BF风ins针织衫',85,'p_181.jpg','pd_181.jpg,pd_182.jpg,pd_183.jpg,pd_184.jpg,pd_185.jpg,pd_186.jpg,pd_187.jpg,pd_188.jpg,pd_189.jpg,pd_1810.jpg','针织衫');
+
+
+/********购物车********/
+CREATE TABLE lyl_cart(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    pid INT,
+    uid INT,
+    title VARCHAR(128),
+    details VARCHAR(128),
+    price VARCHAR(32),
+    img_url VARCHAR(128),
+    count INT,
+    isshow VARCHAR(32)
+);
+
