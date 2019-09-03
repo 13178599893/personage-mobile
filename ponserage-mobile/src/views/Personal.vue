@@ -10,8 +10,8 @@
                     <img src="../assets/img/body_test_1.jpg" alt="">
                 </div>
                 <div class="myTxt">
-                    <span>用户名</span>
-                    <span>手机号</span>
+                    <span>{{list[0].uname}}</span>
+                    <span>{{list[0].uphone}}</span>
                     <span>普通会员</span>
                 </div>
             </div>
@@ -69,15 +69,33 @@
 export default {
     data(){
         return{
-
+            list:[{uname:"",uphone:0}]
         }
+    },
+    created(){
+        this.getpim()
     },
     methods:{
         outLogin(){
             sessionStorage.removeItem("uid")
             sessionStorage.setItem("actived","tab4")
             this.$router.go()
+        },
+        getpim(){
+            let url="selectpim"
+            let uid = sessionStorage.getItem("uid")
+            console.log(uid)
+            if(uid!=null){
+            this.axios.get(url,{
+                params:{
+                    uid
+                }
+            }).then(res=>{
+                console.log(res.data)
+                this.list = res.data
+            })
         }
+    }
     }
 }
 </script>

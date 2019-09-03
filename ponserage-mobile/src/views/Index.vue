@@ -10,52 +10,51 @@
             <div @click="hideNavbbar" class="mask" v-show="showMask"></div>
             <!-- 导航栏 -->       
             <div class="indexNavbar" :style="MarginR">
-                <ul>
+                <ul @click="ToProduct">
                     <li @click="hideNavbbar">
                         <img src="../assets/img/navbar_home.png" alt="">
-                        首页
+                       <span>首页</span> 
                     </li>
-                    <li data-val="POLO">
-                        <img src="../assets/img/navbar_polo.png" alt="">
-                        POLO
+                    <li>
+                        <img data-val="POLO" data-canclick="true" src="../assets/img/navbar_polo.png" alt="">
+                        <span data-val="POLO" data-canclick="true">POLO </span>
                     </li>
-                    <li data-val="夏季新品">
-                        <img src="../assets/img/navbar_new.png" alt="">
-                        夏季新品
+                    <li >
+                        <img data-canclick="true" data-val="夏季新品" src="../assets/img/navbar_new.png" alt="">
+                         <span data-canclick="true" data-val="夏季新品">夏季新品</span>
                     </li>
-                    <li data-val="夹克">
-                        <img src="../assets/img/navbar_jk.png" alt="">
-                        夹克
+                    <li>
+                        <img  data-canclick="true" data-val="夹克" src="../assets/img/navbar_jk.png" alt="">
+                        <span  data-canclick="true" data-val="夹克">夹克</span>
                     </li>
-                    <li data-val="衬衫">
-                        <img src="../assets/img/navbar_cs.png" alt="">
-                        衬衫
+                    <li>
+                        <img data-canclick="true" data-val="衬衫" src="../assets/img/navbar_cs.png" alt="">
+                        <span data-canclick="true" data-val="衬衫">衬衫</span>
                     </li>
-                    <li data-val="牛仔裤">
-                        <img src="../assets/img/navbar_nzk.png" alt="">
-                        牛仔裤
+                    <li>
+                        <img data-canclick="true" data-val="牛仔裤" src="../assets/img/navbar_nzk.png" alt="">
+                        <span data-canclick="true" data-val="牛仔裤">牛仔裤</span>
                     </li>
-                    <li data-val="休闲裤">
-                        <img src="../assets/img/navbar_xxk.png" alt="">
-                        休闲裤
+                    <li>
+                        <img data-canclick="true" data-val="休闲裤" src="../assets/img/navbar_xxk.png" alt="">
+                        <span data-canclick="true" data-val="休闲裤">休闲裤</span>
                     </li>
-                    <li data-val="T恤">
-                        <img src="../assets/img/navbar_ts.png" alt="">
-                        T恤
+                    <li>
+                        <img data-canclick="true" data-val="T恤" src="../assets/img/navbar_ts.png" alt="">
+                        <span data-canclick="true" data-val="T恤">T恤</span>
                     </li>
-                    <li data-val="针织衫">
-                        <img src="../assets/img/navbar_zzs.png" alt="">
-                        针织衫
+                    <li>
+                        <img data-canclick="true" data-val="针织衫" src="../assets/img/navbar_zzs.png" alt="">
+                        <span data-canclick="true" data-val="针织衫">针织衫</span>
                     </li>
-                    <li data-val="卫衣">
-                        <img src="../assets/img/navbar_wy.png" alt="">
-                        卫衣
+                    <li>
+                        <img data-canclick="true" data-val="卫衣" src="../assets/img/navbar_wy.png" alt="">
+                        <span data-canclick="true" data-val="卫衣">卫衣</span>
                     </li>
-                    <li data-val="西服">
-                        <img src="../assets/img/navbar_xf.png" alt="">
-                        西服
+                    <li>
+                        <img data-canclick="true" data-val="西服" src="../assets/img/navbar_xf.png" alt="">
+                        <span data-canclick="true" data-val="西服">西服</span>
                     </li>
-                    
                 </ul>
             </div>
             <div @click="goToSearch" class="searchDiv">
@@ -66,67 +65,59 @@
             <div class="banner">
                 <mt-swipe :auto="3000">
                     <mt-swipe-item v-for="(img,i) of imgs" :key="i">
-                        <img height="200px" :src="'http://127.0.0.1:3000/img/banner2/'+img.url" alt="">
+                        <img height="200px" width="355px" :src="'http://127.0.0.1:3000/img/banner2/'+img.url" alt="">
                     </mt-swipe-item>
                 </mt-swipe>
             </div>
-                <div class="slideDiv">
+                <div class="slideDiv" @click="ToProduct">
                     <ul>
-                        <li data-val="夹克">
-                            <img src="../assets/img/slide_jecket.png" alt="">
-                            <span>夹克</span>
+                        <li>
+                            <img  data-canclick="true" data-val="夹克" src="../assets/img/slide_jecket.png" alt="">
+                            <span  data-canclick="true" data-val="夹克">夹克</span>
                         </li>
-                        <li data-val="衬衫">
-                            <img src="../assets/img/slide_blouse.png" alt="">
-                            <span>衬衫</span>
+                        <li >
+                            <img data-canclick="true" data-val="衬衫" src="../assets/img/slide_blouse.png" alt="">
+                            <span data-canclick="true" data-val="衬衫">衬衫</span>
                         </li>
-                        <li data-val="T恤">
-                            <img src="../assets/img/slide_shirt.png" alt="">
-                            <span>T恤</span>
+                        <li>
+                            <img  data-canclick="true" data-val="T恤" src="../assets/img/slide_shirt.png" alt="">
+                            <span  data-canclick="true" data-val="T恤">T恤</span>
                         </li>
-                        <li data-val="卫衣">
-                            <img src="../assets/img/slide_fleece.png" alt="">
-                            <span>卫衣</span>
+                        <li >
+                            <img data-canclick="true" data-val="卫衣" src="../assets/img/slide_fleece.png" alt="">
+                            <span data-canclick="true" data-val="卫衣">卫衣</span>
                         </li>
-                        <li data-val="西服">
-                            <img src="../assets/img/slide_tailored.png" alt="">
-                            <span>西服</span>
+                        <li>
+                            <img  data-canclick="true" data-val="西服" src="../assets/img/slide_tailored.png" alt="">
+                            <span  data-canclick="true" data-val="西服">西服</span>
                         </li>
-                        <li data-val="衬衫">
-                            <img src="../assets/img/slide_shirt.png" alt="">
-                            <span>衬衫</span>
+                        <li>
+                            <img  data-canclick="true" data-val="衬衫" src="../assets/img/slide_shirt.png" alt="">
+                            <span  data-canclick="true" data-val="衬衫">衬衫</span>
                         </li>
-                        <li data-val="西服">
-                            <img src="../assets/img/slide_tailored.png" alt="">
-                            <span>西服</span>
+                        <li>
+                            <img  data-canclick="true" data-val="夹克" src="../assets/img/slide_jecket.png" alt="">
+                            <span  data-canclick="true" data-val="夹克">夹克</span>
                         </li>
-                        <li data-val="夹克">
-                            <img src="../assets/img/slide_jecket.png" alt="">
-                            <span>夹克</span>
+                        <li >
+                            <img data-canclick="true" data-val="衬衫" src="../assets/img/slide_blouse.png" alt="">
+                            <span data-canclick="true" data-val="衬衫">衬衫</span>
                         </li>
-                        <li data-val="衬衫">
-                            <img src="../assets/img/slide_blouse.png" alt="">
-                            <span>衬衫</span>
+                        <li>
+                            <img  data-canclick="true" data-val="T恤" src="../assets/img/slide_shirt.png" alt="">
+                            <span  data-canclick="true" data-val="T恤">T恤</span>
                         </li>
-                        <li data-val="T恤">
-                            <img src="../assets/img/slide_shirt.png" alt="">
-                            <span>T恤</span>
+                        <li >
+                            <img data-canclick="true" data-val="卫衣" src="../assets/img/slide_fleece.png" alt="">
+                            <span data-canclick="true" data-val="卫衣">卫衣</span>
                         </li>
-                        <li data-val="卫衣">
-                            <img src="../assets/img/slide_fleece.png" alt="">
-                            <span>卫衣</span>
+                        <li>
+                            <img  data-canclick="true" data-val="西服" src="../assets/img/slide_tailored.png" alt="">
+                            <span  data-canclick="true" data-val="西服">西服</span>
                         </li>
-                        <li data-val="西服">
-                            <img src="../assets/img/slide_tailored.png" alt="">
-                            <span>西服</span>
-                        </li>
-                        <li data-val="衬衫">
-                            <img src="../assets/img/slide_shirt.png" alt="">
-                            <span>衬衫</span>
-                        </li>
-                        <li data-val="西服">
-                            <img src="../assets/img/slide_tailored.png" alt="">
-                            <span>西服</span>
+                        <li>
+                            <img  data-canclick="true" data-val="衬衫" src="../assets/img/slide_shirt.png" alt="">
+                            <span  data-canclick="true" data-val="衬衫">衬衫</span>
                         </li>
                     </ul>
                 </div>  
@@ -140,29 +131,18 @@
                 </div>
             </div>
             <div class="bodySelling">
-                <img src="../assets/img/body_test.jpg" alt="">
-                <img src="../assets/img/body_test_details.jpg" alt="">
+                <img v-for="(img,i) of img_url" :key="i" :src="'http://127.0.0.1:3000/img/index/'+img" alt="">
             </div>
             <div class="productBody">
-                <p>清新短袖正装衬衫</p>
-                <p>清新短袖正装衬衫2019夏季新品舒适斜纹短衬男HNCBD2R029A 浅蓝斜纹29 175/92A</p>
-                <p>¥<span class="price">199</span>.00</p>
+                <p>{{p1.title}}</p>
+                <p>{{p1.details}}</p>
+                <p>¥<span class="price">{{p1.price}}</span>.00</p>
             </div>
             <div class="bodyImageDiv">
-                <div>
-                    <img src="../assets/img/body_test_1.jpg" alt="">
-                    <span class="productTitle">休闲裤</span>
-                    <span class="productPrice">¥199.00</span>
-                </div>
-                <div>
-                    <img src="../assets/img/body_test_2.jpg" alt="">
-                    <span class="productTitle">休闲裤</span>
-                    <span class="productPrice">¥199.00</span>
-                </div>
-                <div>
-                    <img src="../assets/img/body_test_3.jpg" alt="">
-                    <span class="productTitle">休闲裤</span>
-                    <span class="productPrice">¥199.00</span>
+                <div v-for="(p,i) of p2" :key="i">
+                    <img :src="'http://127.0.0.1:3000/img/index/'+p.img_url" alt="">
+                    <span class="productTitle">{{p.title}}</span>
+                    <span class="productPrice">¥{{p.price}}.00</span>
                 </div>
             </div>
             <div class="moreBtnDiv" @click="goToSearch">
@@ -173,34 +153,24 @@
             </div>
             <div class="productF2">
                 <div class="productF2Left">
-                    <img src="../assets/img/body_test_5.jpg" alt="">
-                    <span>男休闲正装衬衫</span>
-                    <span>¥199.00</span>
+                    <img :src="'http://127.0.0.1:3000/img/index/'+p3[0].img_url" alt="">
+                    <span>{{p3[0].title}}</span>
+                    <span>¥{{p3[0].price}}.00</span>
                 </div>
                 <div class="productF2Right">
-                    <img src="../assets/img/body_test_6.jpg" alt="">
+                    <img :src="'http://127.0.0.1:3000/img/index/'+p4[0].img_url" alt="">
                     <div class="productF2RightDetails">
-                        <p>商务休闲男裤子</p>
+                        <p>{{p4[0].title}}</p>
                         <p>____</p>
-                        <p>¥599.00</p>
+                        <p>¥{{p4[0].price}}.00</p>
                     </div>
                 </div>
             </div>
             <div class="bodyImageDiv">
-                <div>
-                    <img src="../assets/img/body_test_1.jpg" alt="">
-                    <span class="productTitle">休闲裤</span>
-                    <span class="productPrice">¥199.00</span>
-                </div>
-                <div>
-                    <img src="../assets/img/body_test_2.jpg" alt="">
-                    <span class="productTitle">休闲裤</span>
-                    <span class="productPrice">¥199.00</span>
-                </div>
-                <div>
-                    <img src="../assets/img/body_test_3.jpg" alt="">
-                    <span class="productTitle">休闲裤</span>
-                    <span class="productPrice">¥199.00</span>
+                <div v-for="(p,i) of p2" :key="i">
+                    <img :src="'http://127.0.0.1:3000/img/index/'+p.img_url" alt="">
+                    <span class="productTitle">{{p.title}}</span>
+                    <span class="productPrice">¥{{p.price}}.00</span>
                 </div>
             </div>
             <div class="moreBtnDiv" @click="goToSearch">
@@ -230,14 +200,28 @@ export default {
         return{
             showMask:false,
             MarginR:{right:-220},
-            imgs:[]
+            imgs:[],
+            list:[],
+            p1:{title:""},
+            p2:[{title:""}],
+            p3:[{title:""}],
+            p4:[{title:""}],
+            img_url:[]
         }
     },
     methods:{
+        ToProduct(e){
+            if(e.target.dataset.canclick){
+            console.log(e.target.dataset.val)
+            let shopclass = e.target.dataset.val
+            sessionStorage.setItem("shopclass",shopclass)
+            this.$router.push('/Product')
+            }
+        },
         getImg(){
             this.axios.get('banner2').then(res=>{
                 this.imgs = res.data
-                console.log(res.data)
+                // console.log(res.data)
             })
         },
         
@@ -255,10 +239,30 @@ export default {
             this.$router.go(0)
             sessionStorage.setItem("actived","tab2")
            
+        },
+        getproduct(){
+            this.axios.get("index",).then(res=>{
+                console.log(res.data);
+                this.p1 =res.data[0];
+                console.log(this.p1);
+                this.p2 = res.data.slice(1,4);
+                console.log(this.p2)
+                this.p3 = res.data.slice(4,5)
+                console.log(this.p3);
+                this.p4 = res.data.slice(5,6)
+                console.log(this.p4);
+                // console.log(this.p1.img_url.split(','));
+                this.img_url = this.p1.img_url.split(",")
+                // console.log(this.img_url);
+            })
         }
         },
         created(){
-            this.getImg()
+            
+            this.getproduct();
+        },
+        mounted(){
+            this.getImg();
         }
     }
 
@@ -486,7 +490,7 @@ export default {
     height: 100px;
     top:40px;
     left:15px;
-    background: rgba(250,250,250,.9);
+    background: rgba(250,250,250,.5);
     /* box-shadow:-2px 2px 5px #aaa;
     box-shadow:2px 0px 5px #aaa; */
 }

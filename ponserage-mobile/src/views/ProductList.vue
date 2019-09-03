@@ -3,15 +3,15 @@
     <div class="contain">
         <div class="productHeader">
             <img @click="back" src="../assets/img/back_left.png" alt="">
-            <span>标题</span>
+            <span>{{mytitle}}</span>
         </div>
         <div class="productList">
-            <div class="productItem" v-for="(p,i) in 11" :key="i">
-                <img src="../assets/img/body_test_2.jpg" alt="">
+            <div class="productItem" v-for="(p,i) of list" :key="i">
+                <img width="355px" :src="'http://127.0.0.1:3000/img/product/'+p.img_url" alt="">
                 <div class="productTxt">
-                    <span>你的裤子</span>
-                    <span>详情</span>
-                    <span>价格</span>
+                    <span>{{p.title}}</span>
+                    <span>{{p.details}}</span>
+                    <span>¥{{p.price}}.00</span>
                     <span @click="showDetails">立即抢购</span>
                 </div>
             </div>
@@ -32,7 +32,8 @@ export default {
         return{
             list:[],
             showdetails:false,
-            myPosition:{top:"720px"}
+            myPosition:{top:"720px"},
+            mytitle:""
         }
     },
     methods:{
@@ -47,7 +48,20 @@ export default {
         back(){
             sessionStorage.setItem("actived","tab2")
             this.$router.push('/')
+        },
+        getproductlist(){
+            this.mytitle = sessionStorage.getItem("shopclass");
+            let pname = sessionStorage.getItem("shopclass");
+            this.axios.get("product",{params:{
+                pname
+            }}).then(res=>{
+                console.log(res.data);
+                this.list = res.data
+            })
         }
+    },
+    created(){
+        this.getproductlist();
     },
     components:{
         "lyl-details":Details
@@ -95,7 +109,7 @@ export default {
 
 }
 #app .productList img{
-    width: 160px;
+    /* width: 160px; */
     height: 16 0px;
     border-radius: 12px;
 }

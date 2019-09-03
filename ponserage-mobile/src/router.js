@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Reg from './views/Reg'
 import Product from './views/ProductList'
 import Left from './views/LeftToRight'
+import Details from './views/Details'
 import banner from './components/carousel'
 Vue.use(Router)
 
@@ -12,6 +13,7 @@ export default new Router({
     {path:"/",component:Home},
     {path:"/Left",component:Left},
     {path:"/banner",component:banner},
+    {path:"/Details",component:Details},
     // {path:"/Login",component:Login},
     {path:"/Reg",component:Reg},
     {path:"/Product",component:Product},

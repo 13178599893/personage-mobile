@@ -46,7 +46,8 @@
 <script>
 import Identify from './Identify'
 import { NumberKeyboard } from 'vant'
-import { axiosLogin } from '../util/Api'
+// import { axiosLogin } from '../util/Api'
+// import { async } from 'q';
 export default{
     data(){
         return{
@@ -55,7 +56,8 @@ export default{
             uname:"",
             upwd:"",
             utest:"",
-            show:true
+            show:true,
+            msg:""
         }
     },
     methods:{
@@ -99,19 +101,26 @@ export default{
                         let uid = res.data.data.id
                         this.uid=uid
                         sessionStorage.setItem("uid",uid)
+                        sessionStorage.setItem("actived","tab1")
                         this.$router.go()
                     }
-                    // res.data
                 })
-                // axiosLogin('login',{data:{
-                //     uname,upwd
-                // }}).then(res=>{
-                //     console.log(res);
-                // })
-                //验证完成上后带用户名密码发axios去数据库查询是否存在用户
-                //返回用户信息跳转到首页,将uid存在session中
+                //调用异步封装的axios
+                // this.login()
+               
             }
         },
+        // 异步封装axios
+        // async login(){
+        //     let uname= this.uname;
+        //     let upwd = this.upwd
+        //     let params = {
+        //         uname,upwd
+        //     }
+        //     const url = "http://127.0.0.1:3000/login"
+        //     const res = await this.$http.get(url,params)
+        //     this.msg = res.msg
+        // },
         goLogin(){
             this.$router.push("/Reg")
         },
@@ -135,6 +144,9 @@ export default{
     },
     components:{
         "lyl-identify":Identify
+    },
+    created(){
+        // console.log(axiosLogin);
     },
     mounted() {
         this.identifyCode="";

@@ -8,6 +8,9 @@ const login=require("./routes/login");
 const banner=require('./routes/banner')
 const banner2=require('./routes/banner2')
 const selectpim = require("./routes/getpim")
+const index = require("./routes/index")
+const product = require("./routes/product")
+const shopclass = require("./routes/class")
 
 var server=express();
 server.use(express.static("public"));
@@ -27,6 +30,9 @@ server.use(bodyParser.urlencoded({extended:false}))
 server.use("/reg",reg);
 server.use("/login",login);
 server.use("/selectpim",selectpim)
+server.use("/index",index)
+server.use("/product",product)
+server.use("/shopclass",shopclass)
 server.use("/banner",banner)
 server.use("/banner2",banner2)
 
