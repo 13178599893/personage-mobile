@@ -5,9 +5,13 @@
             <img @click="back" src="../assets/img/back_left.png" alt="">
             <span>{{mytitle}}</span>
         </div>
-        <div class="productList">
+        <div class="nofind" v-if="list.length==0">
+            <img width="50px" src="../assets/img/product_nofind.png" alt="">
+            <p>未找到{{mytitle}}的相关商品</p>
+        </div>
+        <div class="productList" v-else>
             <div class="productItem" v-for="(p,i) of list" :key="i">
-                <img width="355px" :src="'http://127.0.0.1:3000/img/product/'+p.img_url" alt="">
+                <img width="355px" :src="'http://127.0.0.1:5050/img/product/'+p.img_url" alt="">
                 <div class="productTxt">
                     <span>{{p.title}}</span>
                     <span>{{p.details}}</span>
@@ -40,7 +44,7 @@ export default {
     methods:{
         showDetails(e){
             this.showdetails=true;
-            this.myPosition.top=125+"px"
+            this.myPosition.top=85+"px"
             this.pid = e.target.dataset.id
         },
         hideDetails(){
@@ -171,6 +175,11 @@ export default {
     width: 375px;
     height: 677px;
     background: rgba(0,0,0,.7);
+}
+#app .contain .nofind{
+    margin-top:40px;
+    font-family:"楷体";
+    font-size: 20px;
 }
 }
 </style>

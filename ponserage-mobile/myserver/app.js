@@ -17,11 +17,12 @@ const getcart = require("./routes/getcart")
 const addcount = require("./routes/addcount")
 const selectcount = require("./routes/selectcount")
 const delshop = require("./routes/delshop")
+// const SendSms = require("./routes/sendsm")
 
 var server=express();
 server.use(express.static("public"));
-server.listen(3000,()=>{
-  console.log(" 3000端口正在运行...") 
+server.listen(5050,()=>{
+  console.log(" 5050端口正在运行...") 
 })
 server.use(cors({
     origin:["http://127.0.0.1:8080","http://localhost:8080"],
@@ -46,6 +47,7 @@ server.use("/cart",cart)
 server.use("/addcount",addcount)
 server.use("/selectcount",selectcount)
 server.use("/delshop",delshop)
+// server.use("/SendSms",SendSms)
 server.use("/banner",banner)
 server.use("/banner2",banner2)
 

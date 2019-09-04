@@ -117,7 +117,7 @@ export default{
         //     let params = {
         //         uname,upwd
         //     }
-        //     const url = "http://127.0.0.1:3000/login"
+        //     const url = "http://127.0.0.1:5050/login"
         //     const res = await this.$http.get(url,params)
         //     this.msg = res.msg
         // },

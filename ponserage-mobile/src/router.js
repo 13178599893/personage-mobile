@@ -6,6 +6,7 @@ import Product from './views/ProductList'
 import Left from './views/LeftToRight'
 import Details from './views/Details'
 import banner from './components/carousel'
+import pay from './views/pay'
 Vue.use(Router)
 
 export default new Router({
@@ -17,6 +18,7 @@ export default new Router({
     // {path:"/Login",component:Login},
     {path:"/Reg",component:Reg},
     {path:"/Product",component:Product},
+    {path:"/pay",component:pay},
     {
       path: '/about',
       name: 'about',

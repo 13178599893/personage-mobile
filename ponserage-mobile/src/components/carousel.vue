@@ -5,10 +5,10 @@
             <span class="btn-left" :disabled="canClick" @click="move(-1)"><img src="../assets/img/btn_left.png" alt=""></span>
             <ul :style="Position" :class="{'hasTrans':showTrans}">
                 <li v-for="(img,i) of imgs" :key="i">
-                    <img :src="'http://127.0.0.1:3000/img/banner1/'+img.url" alt="">
+                    <img :src="'http://127.0.0.1:5050/img/banner1/'+img.url" alt="">
                 </li>
                 <li>
-                    <img :src="'http://127.0.0.1:3000/img/banner1/'+imgs[0].url" alt="">
+                    <img :src="'http://127.0.0.1:5050/img/banner1/'+imgs[0].url" alt="">
                 </li>
             </ul>
             <span class="btn-right" @click="move(1)"><img src="../assets/img/btn_right.png" alt=""></span>

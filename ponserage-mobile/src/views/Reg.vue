@@ -52,6 +52,7 @@
 </template>
 <script>
 import bus from '../bus'
+import qs from 'qs'
 import { NumberKeyboard } from 'vant'
 export default {
     data(){
@@ -61,7 +62,7 @@ export default {
             upwd:"",
             uphone:"",
             utest:"",
-             show:true
+            show:true
         }
     },
     methods:{
@@ -78,6 +79,14 @@ export default {
             sessionStorage.setItem('actived',this.a);
             // bus.$emit("myActive",this.a)
         },
+        // getsm(){
+        //     let phone = this.uphone
+        //     this.axios.get("SendSms",{params:{
+        //         phone
+        //     }}).then(res=>{
+        //         console.log(res);
+        //     })
+        // },
         Reg(){
             var unamereg = /^[0-9a-z]{6,}$/i
             var upwdreg = /^[0-9a-z]{6,16}$/i
@@ -100,6 +109,32 @@ export default {
                     position:"bottom"
                 })
                 return
+            }else{
+                var uname = this.uname;
+                var upwd = this.upwd;
+                var phone = this.uphone;
+                var tmp = qs.stringify({
+                    uname,upwd,phone
+                })
+                this.axios.post("reg",tmp).then(res=>{
+                    console.log(res);
+                    if(res.data.code==-1){
+                        this.$toast({
+                            message:"用户已存在,请登录",
+                            position:"bottom"
+                        })
+                        return
+                    }else if(res.data.code==1){
+                        this.$toast({
+                            message:"注册成功",
+                            position:"bottom"
+                        })
+                        let uid = res.data.data.id
+                        sessionStorage.setItem("uid",uid)
+                        sessionStorage.setItem("actived","tab1")
+                        this.$router.push('/')
+                    }
+                })
             }
             //验证码验证成功后发axios去数据库查询是否存在手机号,如果存在返回存在信息,不然返回注册成功信息加跳转到主页,将uid保存在session中
         }

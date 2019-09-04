@@ -6,7 +6,7 @@
       <img class="searchImg" src="../assets/img/icon_search.png" alt />
       <input class="classSearch" v-model="searchmsg" type="text" placeholder="请输入您想要搜索的商品名称" />
       <span class="searchTxt" @click="searchshop">搜索</span>
-      <img class="classGologin" src="../assets/img/tabbar_my.png" alt />
+      <img class="classGologin" @click="goTab4" src="../assets/img/tabbar_my.png" alt />
     </div>
     <div class="classBody">
       <!-- 左侧菜单 -->
@@ -35,7 +35,7 @@
             </div>
             <ul class="item-wapper">
               <li v-for="(p,i) of shoplist" v-show="p.productclass==menu" :key="i">
-                <img :src="'http://127.0.0.1:3000/img/product/'+p.img_url" />
+                <img :data-val="p.productclass" @touchstart="goToProduct" :src="'http://127.0.0.1:5050/img/product/'+p.img_url" />
                 <span>¥{{p.price}}.00</span>
               </li>
             </ul>
@@ -81,6 +81,10 @@ export default {
         this.$router.push("/Product");
       }
     },
+    goTab4(){
+        sessionStorage.setItem("actived","tab4")
+        this.$router.go()
+    },
     //跳转商品页
     goToProduct(e) {
       // console.log(1)
@@ -99,7 +103,7 @@ export default {
       // console.log(this.rights);
       this.rights.on("scroll", pos => {
         this.scrollY = Math.abs(Math.round(pos.y));
-        console.log(this.scrollY);
+        // console.log(this.scrollY);
       });
       // 下拉开始
       //   this.rights.on("touchStart", pos => {
@@ -206,7 +210,7 @@ export default {
 <style scoped>
 @media screen and (max-width: 375px) {
   body {
-    margin-left: 0 !important;
+    /* margin-left: 0 !important; */
   }
   ul {
     list-style: none;
@@ -226,7 +230,7 @@ export default {
     z-index: 3;
     display: flex;
     top: -10px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 20px 8px 10px;
     background: #fff;
@@ -242,16 +246,20 @@ export default {
     width: 18px;
     height: 18px;
   }
+  #app .classTitle img.classGologin{
+    margin-right: 10px;
+  }
   #app .classTitle .searchTxt {
     background: #eee;
-    padding: 3px 0 3px 8px;
+    padding: 3px 0 3px 1px;
     border-left: 1px solid #aaa;
+    width: 40px;
     position: relative;
-    left: -50px;
+    left: -45px;
     font-size: 12px;
   }
   #app .classTitle .classSearch {
-    width: 280px;
+    width: 300px;
     height: 30px;
     border-radius: 14px;
     background: #eee;

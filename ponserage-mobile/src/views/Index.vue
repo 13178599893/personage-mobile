@@ -65,7 +65,7 @@
             <div class="banner">
                 <mt-swipe :auto="3000">
                     <mt-swipe-item v-for="(img,i) of imgs" :key="i">
-                        <img height="200px" width="355px" :src="'http://127.0.0.1:3000/img/banner2/'+img.url" alt="">
+                        <img @click="goToSearch" height="200px" width="355px" :src="'http://127.0.0.1:5050/img/banner2/'+img.url" alt="">
                     </mt-swipe-item>
                 </mt-swipe>
             </div>
@@ -120,8 +120,11 @@
                             <span  data-canclick="true" data-val="衬衫">衬衫</span>
                         </li>
                     </ul>
-                </div>  
-            <carousel></carousel>
+                </div>
+                <!-- 轮播组件 -->
+                <div @click="goToSearch">
+                    <carousel></carousel>
+                </div>
             <div class="bodyTitle">
                 <p>尖货热卖</p>
                 <img src="../assets/img/shenlve.png" alt="">
@@ -130,8 +133,8 @@
                     <P>SELLING</P>
                 </div>
             </div>
-            <div class="bodySelling">
-                <img v-for="(img,i) of img_url" :key="i" :src="'http://127.0.0.1:3000/img/index/'+img" alt="">
+            <div class="bodySelling" @click="goToSearch">
+                <img v-for="(img,i) of img_url" :key="i" :src="'http://127.0.0.1:5050/img/index/'+img" alt="">
             </div>
             <div class="productBody">
                 <p>{{p1.title}}</p>
@@ -139,8 +142,8 @@
                 <p>¥<span class="price">{{p1.price}}</span>.00</p>
             </div>
             <div class="bodyImageDiv">
-                <div v-for="(p,i) of p2" :key="i">
-                    <img :src="'http://127.0.0.1:3000/img/index/'+p.img_url" alt="">
+                <div v-for="(p,i) of p2" :key="i" @click="goToSearch">
+                    <img :src="'http://127.0.0.1:5050/img/index/'+p.img_url" alt="">
                     <span class="productTitle">{{p.title}}</span>
                     <span class="productPrice">¥{{p.price}}.00</span>
                 </div>
@@ -148,17 +151,17 @@
             <div class="moreBtnDiv" @click="goToSearch">
                 <span>更多热卖商品>></span>
             </div>
-            <div class="hotSelling">
+            <div class="hotSelling" @click="goToSearch">
                 <img src="../assets/img/body_test_4.jpg" alt="">
             </div>
-            <div class="productF2">
-                <div class="productF2Left">
-                    <img :src="'http://127.0.0.1:3000/img/index/'+p3[0].img_url" alt="">
+            <div class="productF2" @click="goToSearch">
+                <div class="productF2Left" >
+                    <img :src="'http://127.0.0.1:5050/img/index/'+p3[0].img_url" alt="">
                     <span>{{p3[0].title}}</span>
                     <span>¥{{p3[0].price}}.00</span>
                 </div>
-                <div class="productF2Right">
-                    <img :src="'http://127.0.0.1:3000/img/index/'+p4[0].img_url" alt="">
+                <div class="productF2Right" >
+                    <img :src="'http://127.0.0.1:5050/img/index/'+p4[0].img_url" alt="">
                     <div class="productF2RightDetails">
                         <p>{{p4[0].title}}</p>
                         <p>____</p>
@@ -167,8 +170,8 @@
                 </div>
             </div>
             <div class="bodyImageDiv">
-                <div v-for="(p,i) of p2" :key="i">
-                    <img :src="'http://127.0.0.1:3000/img/index/'+p.img_url" alt="">
+                <div v-for="(p,i) of p2" :key="i" @click="goToSearch">
+                    <img :src="'http://127.0.0.1:5050/img/index/'+p.img_url" alt="">
                     <span class="productTitle">{{p.title}}</span>
                     <span class="productPrice">¥{{p.price}}.00</span>
                 </div>

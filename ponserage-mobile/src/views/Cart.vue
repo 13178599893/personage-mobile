@@ -16,7 +16,7 @@
           <input type="checkbox" :checked="item.cb" @click="changeCb($event,i)" />
         </div>
         <div>
-          <img class="cartImg" :src="'http://127.0.0.1:3000/img/product/'+item.img_url" alt />
+          <img class="cartImg" :src="'http://127.0.0.1:5050/img/product/'+item.img_url" alt />
         </div>
         <div class="txt">
           <span class="cartItemTitle">{{item.title}}</span>
@@ -45,7 +45,7 @@
       </label>
       <span>合计:</span>
       <span v-text="'¥'+total+'.00'"></span>
-      <span>提交订单</span>
+      <span @click="pay">提交订单</span>
     </div>
   </div>
 </template>
@@ -61,20 +61,36 @@ export default {
     };
   },
   methods: {
+     pay(){
+            if(this.total==0){
+              this.$toast({
+                message:"请选择要购买的商品",
+                position:"bottom"
+              })
+            }else{
+              this.$router.push("/pay")
+            }
+        },
     del(i) {
-      let uid = sessionStorage.getItem("uid");
-      let id = this.list[i].id;
-      this.axios
-        .get("delshop", {
-          params: {
-            uid,
-            id
-          }
-        })
-        .then(res => {
-          console.log(res);
-          this.selectshop();
-        });
+      this.$messagebox.confirm(`是否删除${this.list[i].title}商品`).then(action=>{
+        let uid = sessionStorage.getItem("uid");
+        let id = this.list[i].id;
+        this.axios
+          .get("delshop", {
+            params: {
+              uid,
+              id
+            }
+          })
+          .then(res => {
+            console.log(res);
+            // this.selectshop();
+            this.list.splice(i,1)
+            this.calctotal();
+          });
+      }).catch(err=>{
+        console.log(err)
+      })
     },
     // sub(i){
     //     let uid = sessionStorage.getItem("uid")
@@ -93,8 +109,10 @@ export default {
       // console.log()
       let list = this.list;
       if ((list[i].count > 1 && sum == -1) || sum == 1) {
-        console.log(sum);
+        // console.log(sum);
         list[i].count += sum;
+      this.list[i].calculate = this.list[i].count*this.list[i].price
+      this.calctotal()
         // console.log(list[i]);
         // console.log( this.list[i].mycount);
         setTimeout(()=>{
@@ -105,8 +123,9 @@ export default {
             this.axios.get('addcount',{params:{
                     uid,pid,count
             }}).then(res=>{
-                    console.log(res);
-                this.selectcount(pid,i)
+                    // console.log(res);
+                    this.selectcount(pid,i)
+                    this.list[i].calculate = this.list[i].count*this.list[i].price
             })
         },2000)
       }
@@ -116,18 +135,26 @@ export default {
         this.axios.get('selectcount',{params:{
                     uid,pid
             }}).then(res=>{
-                    console.log(res.data[0].count );
-                    console.log(this.list[i])
+                    // console.log(res.data[0].count );
+                    // console.log(this.list[i])
                     // let list = this.list;
-                        this.list[i].count=res.data[0].count
-                        setTimeout(()=>{
-                            for (var item of this.list) {
-                                // 计算小计
-                                item.calculate = item.count * item.price;
-                    // item.mycount = item.count;
-                                 }
-                        },1000)
+                    //     this.list[i].count=res.data[0].count
+                    //     setTimeout(()=>{
+                    //         for (var item of this.list) {
+                    //             // 计算小计
+                    //             item.calculate = item.count * item.price;
+                    // // item.mycount = item.count;
+                    //              }
+                    //     },50)
             })
+    },
+    calctotal(){
+      this.total = 0;
+      this.list.forEach((item,index)=>{
+        if(item.cb){
+          this.total += item.calculate
+        }
+      })
     },
     selectshop() {
       var uid = sessionStorage.getItem("uid");
@@ -150,6 +177,7 @@ export default {
           this.total = 0;
         });
     },
+    // 去逛逛
     goHome() {
       this.$router.go();
       sessionStorage.setItem("actived", "tab1");
@@ -157,8 +185,8 @@ export default {
     handleChange(value) {
       // console.log(value);
     },
-    initcb() {
       // 重置选中状态
+    initcb() {
       for (let i = 0; i < this.list.length; i++) {
         this.list[i].cb = false;
       }
@@ -168,6 +196,7 @@ export default {
     //         console.log(item.mycount)
     //     }
     // },
+    // 复选框
     changeCb(e, i) {
       if (this.list[i].cb) {
         this.list[i].cb = false;
@@ -194,6 +223,7 @@ export default {
       }
       this.cbAll = this.list[i].cb;
     },
+    // 全选
     Allcb() {
       if (this.cbAll == true) {
         this.cbAll = false;
@@ -216,19 +246,25 @@ export default {
     setTimeout(() => {
         // this.addcount();
       this.initcb();
+    }, 500);
         this.selectcount()
-    }, 1500);
   },
   mounted() {},
-  computed: {},
-  updated() {
-    // this.selectshop()
+  updated() {},
+  computed: {
+    calculate(){
+        for (var i=0;i<this.list.length;i++) {
+            // 计算小计
+            console.log(this.list);
+            console.log(this.list[i]);
+            // console.log(this.list[i].calculate);
+            return this.list[i].calculate= this.list[i].count * this.list[i].price;
+            
+              }
+    }
   },
-  watch: {
-    //   list(){
-    //     //   this.selectshop()
-    //   }
-  }
+ 
+  watch: {}
 };
 </script>
 <style scoped>
@@ -238,9 +274,7 @@ export default {
     width: 0px;
     height: 0px;
   }
-  body {
-    margin-right: 0 !important;
-  }
+
   #app .contain .cartTitle {
     padding-bottom: 5px;
     border-bottom: 1px solid #ddd;

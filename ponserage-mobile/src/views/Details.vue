@@ -9,7 +9,7 @@
                 <div class="banner">
                     <mt-swipe :auto="3000">
                         <mt-swipe-item v-for="(img,i) of bannerimg" :key="i">
-                            <img :src="'http://127.0.0.1:3000/img/product/'+img" alt="">
+                            <img :src="'http://127.0.0.1:5050/img/product/'+img" alt="">
                         </mt-swipe-item>
                     </mt-swipe>
                 </div>
@@ -27,7 +27,7 @@
                 <span>产品说明</span>
             </div>
             <div class="detailsImg">
-                <img v-for="(img,i) of detailsimg" :key="i" :src="'http://127.0.0.1:3000/img/product/'+img" alt="">
+                <img v-for="(img,i) of detailsimg" :key="i" :src="'http://127.0.0.1:5050/img/product/'+img" alt="">
             </div>
             <div class="detailFooter">
                 <div class="detailsFooterLeft">
@@ -39,7 +39,7 @@
                     <p style="margin:0;font-size:12px">购物车</p>
                 </div>
                 <span @click="joincart">加入购物车</span>
-                <span>立即购买</span>
+                <span @click="pay">立即购买</span>
             </div>
         </div>
     </div>
@@ -59,6 +59,9 @@ export default {
         "pid"
     ],
     methods:{
+        pay(){
+            this.$router.push("/pay")
+        },
         joincart(){
                 let pid,uid,title,details,price,img_url,count,isshow;
                 this.uid = sessionStorage.getItem("uid");
@@ -82,13 +85,15 @@ export default {
                 this.$router.push('/')
                 return
             }else{
-                this.axios.post('cart',tmp).then(res=>{
-                    console.log(res);
-                     this.$toast({
-                    message:"已成功添加到购物车",
-                    position:"bottom"
-                });
-                })
+                setTimeout(()=>{
+                    this.axios.post('cart',tmp).then(res=>{
+                        console.log(res);
+                         this.$toast({
+                        message:"已成功添加到购物车",
+                        position:"bottom"
+                    });
+                    })
+                },500)
             }
         },
         getDetails(){
@@ -208,7 +213,7 @@ export default {
     display: flex;
     position: absolute;
     z-index: 50;
-    bottom:30px;
+    bottom:-10px;
     box-sizing: border-box;
     padding:5px 0;
     align-items: center;
