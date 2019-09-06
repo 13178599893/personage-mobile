@@ -7,6 +7,8 @@
         <div>
             <img width="375px" src="../assets/img/pay.jpg" alt="">
         </div>
+        <button @click="changeLogin">点击</button>
+        <div>{{this.$store.state.isLogin}}</div>
     </div>
 </template>
 <script>
@@ -18,7 +20,10 @@ export default {
     },
     methods:{
         back(){
-            window.history.back(-1)
+            window.history.back(-1);
+        },
+        changeLogin(){
+            this.$store.commit("changeLogin");  
         }
     }
 }

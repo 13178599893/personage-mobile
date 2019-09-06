@@ -96,6 +96,7 @@ export default{
                 this.axios.get("login",{params:{
                     uname,upwd
                 }}).then(res=>{
+                    console.log(res)
                     console.log(res.data.data);
                     if(res.data.code==1){
                         let uid = res.data.data.id
@@ -103,6 +104,11 @@ export default{
                         sessionStorage.setItem("uid",uid)
                         sessionStorage.setItem("actived","tab1")
                         this.$router.go()
+                    }else{
+                        this.$toast({
+                    message:"用户名或密码不正确",
+                    position:"bottom"
+                             })
                     }
                 })
                 //调用异步封装的axios

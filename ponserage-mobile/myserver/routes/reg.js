@@ -7,8 +7,8 @@ router.post("/",(req,res)=>{
     var uname = req.body.uname
     var upwd= req.body.upwd
     var uphone = req.body.phone
-    var sql = "SELECT uname,uphone FROM lyl_reg where  uname=? or uphone=?"
-    pool.query(sql,[uname,uphone],(err,result)=>{
+    var sql = "SELECT uphone FROM lyl_reg where uphone=?"
+    pool.query(sql,[uphone],(err,result)=>{
         if(err)throw err;
         console.log(result)
         if(result.length>0){

@@ -16,6 +16,8 @@ Vue.use(ElementUI);
 Vue.prototype.axios=axios;
 axios.defaults.baseURL="http://127.0.0.1:5050/"
 
+axios.defaults.withCredentials=true
+
 // Vue.prototype.$http = {
 //   get
 // }

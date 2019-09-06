@@ -30,7 +30,8 @@
             <div class="myInput">
                 <input @focus="show = true" type="text" v-model="utest" maxlength="6" name="utest" placeholder="请输入验证码">
             </div>
-            <button class="getTest">获取验证码</button>
+            <button class="getTest" v-if="canclick" @click="getsm">获取验证码</button>
+            <button class="getTest" v-else style="font-size:14px"  @click="getsm">{{time}}S后重新获取</button>
             <div class="regButton">
                 <button @click="Reg">注册</button>
             </div>
@@ -62,7 +63,10 @@ export default {
             upwd:"",
             uphone:"",
             utest:"",
-            show:true
+            testVal:"",
+            show:true,
+            time:60,
+            canclick:true
         }
     },
     methods:{
@@ -79,14 +83,47 @@ export default {
             sessionStorage.setItem('actived',this.a);
             // bus.$emit("myActive",this.a)
         },
-        // getsm(){
-        //     let phone = this.uphone
-        //     this.axios.get("SendSms",{params:{
-        //         phone
-        //     }}).then(res=>{
-        //         console.log(res);
-        //     })
-        // },
+        getsm(){
+            let phone = this.uphone
+            var uphonereg = /^1[3-8]\d{9}$/
+                if(uphonereg.test(this.uphone)==false||this.uphone==""){
+                        this.$toast({
+                    message:"手机号格式不正确",
+                    position:"bottom"
+                })
+                return
+                    }else{
+                        if(this.canclick){
+                            this.axios.get("SendSms",{params:{
+                                phone
+                            }}).then(res=>{
+                                console.log(res);
+                                if(res.data.code==-1){
+                                    this.$toast({
+                                message:"该号码已注册",
+                                position:"bottom"
+                                    })
+                                }else{
+                                    this.testVal = res.data.data
+                                    this.canclick=false
+                                    this.mytime()
+                                }
+                            })
+                        }       
+            }
+        },
+        mytime(){
+                var timer=setInterval(()=>{
+                    this.time--
+                    console.log(this.time)
+                    if(this.time==0){
+                        this.canclick = true
+                        clearInterval(timer)
+                        this.time = 60
+                        timer = null
+                    }
+                },1000)
+            },
         Reg(){
             var unamereg = /^[0-9a-z]{6,}$/i
             var upwdreg = /^[0-9a-z]{6,16}$/i
@@ -106,6 +143,12 @@ export default {
             }else if(uphonereg.test(this.uphone)==false||this.uphone==""){
                  this.$toast({
                     message:"手机号格式不正确",
+                    position:"bottom"
+                })
+                return
+            }else if(this.testVal!=this.utest||this.utest==""){
+                    this.$toast({
+                    message:"验证码错误",
                     position:"bottom"
                 })
                 return
