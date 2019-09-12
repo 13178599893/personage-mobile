@@ -198,11 +198,8 @@ export default {
     // },
     // 复选框
     changeCb(e, i) {
-      if (this.list[i].cb) {
-        this.list[i].cb = false;
-      } else {
-        this.list[i].cb = true;
-      }
+    
+        this.list[i].cb = !this.list[i].cb
       //  this.total=0;
       // 计算总额
       if (this.list[i].cb) {
@@ -225,11 +222,7 @@ export default {
     },
     // 全选
     Allcb() {
-      if (this.cbAll == true) {
-        this.cbAll = false;
-      } else {
-        this.cbAll = true;
-      }
+        this.cbAll = !this.cbAll
       for (let i = 0; i < this.list.length; i++) {
         this.list[i].cb = this.cbAll;
         if (this.cbAll) {
