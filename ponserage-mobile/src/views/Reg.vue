@@ -28,7 +28,7 @@
                 <span>验证码</span>
             </div>
             <div class="myInput">
-                <input @focus="show = true" type="text" v-model="utest" maxlength="6" name="utest" placeholder="请输入验证码">
+                <input  type="text" v-model="utest" maxlength="6" name="utest" placeholder="请输入验证码">
             </div>
             <button class="getTest" v-if="canclick" @click="getsm">获取验证码</button>
             <button class="getTest" v-else style="font-size:14px"  @click="getsm">{{time}}S后重新获取</button>
@@ -38,7 +38,7 @@
             <div class="goLoginButton">
                 <button @click="back">登录</button>
             </div>
-            <div>
+            <!-- <div>
                 <van-number-keyboard
                 :show="show"
                 extra-key="."
@@ -47,7 +47,7 @@
                 @input="onInput"
                 @delete="onDelete"
                 />
-                </div>
+                </div> -->
         </div>
     </div>
 </template>
@@ -64,7 +64,7 @@ export default {
             uphone:"",
             utest:"",
             testVal:"",
-            show:true,
+            // show:true,
             time:60,
             canclick:true
         }
@@ -185,7 +185,7 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (max-width:375px){
+@media screen and (min-width:375px){
 #app .contain{
     padding: 0 10px;
 }
@@ -238,7 +238,7 @@ export default {
     box-shadow: 2px 2px 5px 1px #ddd;
     position: absolute;
     right: 10px;
-    top:364px;
+    top:372px;
     color: #fff;
 }
 #app .regInput .regButton{

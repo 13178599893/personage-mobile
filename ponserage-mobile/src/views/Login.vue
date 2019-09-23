@@ -16,7 +16,7 @@
                 <input type="password" v-model="upwd" placeholder="请输入密码" name="upwd">
             </div>
             <div class="myInput">
-                <input @focus="show = true"  type="text" v-model="utest" placeholder="请输入验证码" name="utest">
+                <input type="text" v-model="utest" placeholder="请输入验证码" name="utest">
             </div>
             <div class="myTestInput"  @click="changeTestVal">
                 <lyl-identify :identifyCode="identifyCode" class="myCanvas"></lyl-identify>
@@ -30,7 +30,7 @@
                     <button @click="Login">登录</button>
                 </div>
                   </div>
-                  <div>
+                  <!-- <div>
                     <van-number-keyboard
                     :show="show"
                     extra-key="."
@@ -39,7 +39,7 @@
                     @input="onInput"
                     @delete="onDelete"
                     />
-                  </div>
+                  </div> -->
             </div>
     </div>
 </template>
@@ -56,7 +56,7 @@ export default{
             uname:"",
             upwd:"",
             utest:"",
-            show:true,
+
             msg:""
         }
     },
@@ -161,7 +161,7 @@ export default{
 }
 </script>
 <style scoped>
-@media screen and (max-width:375px) {
+@media screen and (min-width:375px) {
 #app .myLoginTitle{
     display: flex;
     align-items: center;
@@ -209,7 +209,7 @@ export default{
 #app .myBody .myTestInput{
     position: absolute;
     right: 5px;
-    top:349px;
+    top:356px;
     height: 43px;
     box-sizing: border-box;
     padding-left: 5px;

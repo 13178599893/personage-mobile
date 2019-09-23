@@ -100,7 +100,7 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (max-width:375px){
+@media screen and (min-width:375px){
 #app .contain{
     padding: 0 10px;
 }

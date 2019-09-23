@@ -108,7 +108,7 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 375px) {
 .mint-tabbar{
      z-index: 20 !important;
 }

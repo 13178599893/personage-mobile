@@ -14,7 +14,7 @@ import 'vant/lib/index.css';
 Vue.use(NumberKeyboard);
 Vue.use(ElementUI);
 Vue.prototype.axios=axios;
-axios.defaults.baseURL="http://127.0.0.1:5050/"
+axios.defaults.baseURL="http://lylpersonage.applinzi.com/"
 
 axios.defaults.withCredentials=true
 

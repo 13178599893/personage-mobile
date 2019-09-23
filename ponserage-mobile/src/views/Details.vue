@@ -9,7 +9,7 @@
                 <div class="banner">
                     <mt-swipe :auto="3000">
                         <mt-swipe-item v-for="(img,i) of bannerimg" :key="i">
-                            <img :src="'http://127.0.0.1:5050/img/product/'+img" alt="">
+                            <img :src="'http://lylpersonage.applinzi.com/img/product/'+img" alt="">
                         </mt-swipe-item>
                     </mt-swipe>
                 </div>
@@ -27,9 +27,9 @@
                 <span>产品说明</span>
             </div>
             <div class="detailsImg">
-                <img v-for="(img,i) of detailsimg" :key="i" :src="'http://127.0.0.1:5050/img/product/'+img" alt="">
+                <img v-for="(img,i) of detailsimg" :key="i" :src="'http://lylpersonage.applinzi.com/img/product/'+img" alt="">
             </div>
-            <div class="detailFooter">
+            <div class="detailFooter" :class="{'myfixed':myfixed}">
                 <div class="detailsFooterLeft">
                     <img src="../assets/img/footer_service.png" alt="">
                     <p style="margin:0;font-size:12px">客服</p>
@@ -56,7 +56,8 @@ export default {
         }
     },
     props:[
-        "pid"
+        "pid",
+        "myfixed"
     ],
     methods:{
         pay(){
@@ -124,7 +125,7 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (max-width:375px){
+@media screen and (min-width:375px){
 ::-webkit-scrollbar  
 {  
 	display: none!important;
@@ -209,11 +210,14 @@ export default {
     width: 375px;
   
 }
+#app .contain .detailsBody .detailFooter.myfixed{
+    position: fixed;
+}
 #app .contain .detailsBody .detailFooter{
     display: flex;
     position: absolute;
     z-index: 50;
-    bottom:-10px;
+    bottom:0px;
     box-sizing: border-box;
     padding:5px 0;
     align-items: center;

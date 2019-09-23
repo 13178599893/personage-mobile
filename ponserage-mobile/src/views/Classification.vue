@@ -35,7 +35,7 @@
             </div>
             <ul class="item-wapper">
               <li v-for="(p,i) of shoplist" v-show="p.productclass==menu" :key="i">
-                <img :data-val="p.productclass" @touchstart="goToProduct" :src="'http://127.0.0.1:5050/img/product/'+p.img_url" />
+                <img :data-val="p.productclass" @touchstart="goToProduct" :src="'http://lylpersonage.applinzi.com/img/product/'+p.img_url" />
                 <span>¥{{p.price}}.00</span>
               </li>
             </ul>
@@ -208,10 +208,7 @@ export default {
 };
 </script>
 <style scoped>
-@media screen and (max-width: 375px) {
-  body {
-    /* margin-left: 0 !important; */
-  }
+@media screen and (min-width: 375px) {
   ul {
     list-style: none;
     margin: 0;

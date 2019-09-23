@@ -11,7 +11,7 @@
         </div>
         <div class="productList" v-else>
             <div class="productItem" v-for="(p,i) of list" :key="i">
-                <img width="355px" :src="'http://127.0.0.1:5050/img/product/'+p.img_url" alt="">
+                <img width="355px" :src="'http://lylpersonage.applinzi.com/img/product/'+p.img_url" alt="">
                 <div class="productTxt">
                     <span>{{p.title}}</span>
                     <span>{{p.details}}</span>
@@ -25,7 +25,7 @@
             <!-- 遮罩 -->
         </div>
         <div class="myDetails" :style="myPosition">
-             <lyl-details :pid=pid></lyl-details>
+             <lyl-details :myfixed="myfixed" :pid=pid></lyl-details>
         </div>
     </div>
 </template>
@@ -38,7 +38,8 @@ export default {
             showdetails:false,
             myPosition:{top:"720px"},
             mytitle:"",
-            pid:""
+            pid:"",
+            myfixed:false
         }
     },
     methods:{
@@ -46,10 +47,12 @@ export default {
             this.showdetails=true;
             this.myPosition.top=85+"px"
             this.pid = e.target.dataset.id
+            this.myfixed=true
         },
         hideDetails(){
              this.showdetails=false;
              this.myPosition.top=720+"px"
+             this.myfixed=false
         },
         back(){
             sessionStorage.setItem("actived","tab2")
@@ -75,7 +78,7 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (max-width:375px){
+@media screen and (min-width:375px){
 ::-webkit-scrollbar  
 {  
 	display: none!important;

@@ -65,7 +65,7 @@
             <div class="banner">
                 <mt-swipe :auto="3000">
                     <mt-swipe-item v-for="(img,i) of imgs" :key="i">
-                        <img @click="goToSearch" height="200px" width="355px" :src="'http://127.0.0.1:5050/img/banner2/'+img.url" alt="">
+                        <img @click="goToSearch" style="cursor: pointer" height="200px" width="355px" :src="'http://lylpersonage.applinzi.com/img/banner2/'+img.url" alt="">
                     </mt-swipe-item>
                 </mt-swipe>
             </div>
@@ -122,7 +122,7 @@
                     </ul>
                 </div>
                 <!-- 轮播组件 -->
-                <div @click="goToSearch">
+                <div @click="goToSearch" style="cursor: pointer">
                     <carousel></carousel>
                 </div>
             <div class="bodyTitle">
@@ -133,8 +133,8 @@
                     <P>SELLING</P>
                 </div>
             </div>
-            <div class="bodySelling" @click="goToSearch">
-                <img v-for="(img,i) of img_url" :key="i" :src="'http://127.0.0.1:5050/img/index/'+img" alt="">
+            <div class="bodySelling" @click="goToSearch" style="cursor: pointer">
+                <img v-for="(img,i) of img_url" :key="i" :src="'http://lylpersonage.applinzi.com/img/index/'+img" alt="">
             </div>
             <div class="productBody">
                 <p>{{p1.title}}</p>
@@ -142,26 +142,26 @@
                 <p>¥<span class="price">{{p1.price}}</span>.00</p>
             </div>
             <div class="bodyImageDiv">
-                <div v-for="(p,i) of p2" :key="i" @click="goToSearch">
-                    <img :src="'http://127.0.0.1:5050/img/index/'+p.img_url" alt="">
+                <div v-for="(p,i) of p2" :key="i" @click="goToSearch" style="cursor: pointer">
+                    <img :src="'http://lylpersonage.applinzi.com/img/index/'+p.img_url" alt="">
                     <span class="productTitle">{{p.title}}</span>
                     <span class="productPrice">¥{{p.price}}.00</span>
                 </div>
             </div>
-            <div class="moreBtnDiv" @click="goToSearch">
+            <div class="moreBtnDiv" style="cursor: pointer" @click="goToSearch" >
                 <span>更多热卖商品>></span>
             </div>
-            <div class="hotSelling" @click="goToSearch">
+            <div class="hotSelling" @click="goToSearch" style="cursor: pointer">
                 <img src="../assets/img/body_test_4.jpg" alt="">
             </div>
-            <div class="productF2" @click="goToSearch">
+            <div class="productF2" @click="goToSearch" style="cursor: pointer">
                 <div class="productF2Left" >
-                    <img :src="'http://127.0.0.1:5050/img/index/'+p3[0].img_url" alt="">
+                    <img :src="'http://lylpersonage.applinzi.com/img/index/'+p3[0].img_url" alt="">
                     <span>{{p3[0].title}}</span>
                     <span>¥{{p3[0].price}}.00</span>
                 </div>
                 <div class="productF2Right" >
-                    <img :src="'http://127.0.0.1:5050/img/index/'+p4[0].img_url" alt="">
+                    <img :src="'http://lylpersonage.applinzi.com/img/index/'+p4[0].img_url" alt="">
                     <div class="productF2RightDetails">
                         <p>{{p4[0].title}}</p>
                         <p>____</p>
@@ -170,13 +170,13 @@
                 </div>
             </div>
             <div class="bodyImageDiv">
-                <div v-for="(p,i) of p2" :key="i" @click="goToSearch">
-                    <img :src="'http://127.0.0.1:5050/img/index/'+p.img_url" alt="">
+                <div v-for="(p,i) of p2" :key="i" @click="goToSearch" style="cursor: pointer">
+                    <img :src="'http://lylpersonage.applinzi.com/img/index/'+p.img_url" alt="">
                     <span class="productTitle">{{p.title}}</span>
                     <span class="productPrice">¥{{p.price}}.00</span>
                 </div>
             </div>
-            <div class="moreBtnDiv" @click="goToSearch">
+            <div class="moreBtnDiv" @click="goToSearch" style="cursor: pointer">
                 <span>更多最新单品>></span>
             </div>
             <div class="footer">
@@ -239,6 +239,7 @@ export default {
             },300)
         },
         goToSearch(){
+           
             this.$router.go(0)
             sessionStorage.setItem("actived","tab2")
            
@@ -271,9 +272,9 @@ export default {
 
 </script>
 <style scoped>
-@media screen and (max-width:375px ) {
+@media screen and (min-width:375px ) {
 #app .contain{
-    height: 600px;
+    height: 605px;
     position: relative;
     padding: 0 10px;
     box-sizing: border-box;
@@ -281,12 +282,12 @@ export default {
     /* overflow: scroll; */
     margin-bottom:80px;
 }
-::-webkit-scrollbar  
+/* ::-webkit-scrollbar  
 {  
 	display: none!important;
     width: 0px;  
     height: 0px;  
-}
+} */
 #app .titleFixed{
     text-align: left;
     box-sizing: border-box;
@@ -545,7 +546,7 @@ export default {
 }
 #app .contain .indexNavbar ul li{
     /* border-bottom:2px solid #000; */
-    margin-top:25px;
+    margin-top:20px;
     font-size: 20px;
     font-family: "楷体";
 }

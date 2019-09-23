@@ -16,7 +16,7 @@
           <input type="checkbox" :checked="item.cb" @click="changeCb($event,i)" />
         </div>
         <div>
-          <img class="cartImg" :src="'http://127.0.0.1:5050/img/product/'+item.img_url" alt />
+          <img class="cartImg" :src="'http://lylpersonage.applinzi.com/img/product/'+item.img_url" alt />
         </div>
         <div class="txt">
           <span class="cartItemTitle">{{item.title}}</span>
@@ -115,7 +115,11 @@ export default {
       this.calctotal()
         // console.log(list[i]);
         // console.log( this.list[i].mycount);
-        setTimeout(()=>{
+          var timer;
+          if(timer!==undefined){
+              clearTimeout(timer)
+          }
+          timer=setTimeout(()=>{
             let uid = sessionStorage.getItem("uid")
             let pid = this.list[i].id
             let count=this.list[i].count
@@ -261,7 +265,7 @@ export default {
 };
 </script>
 <style scoped>
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 375px) {
   ::-webkit-scrollbar {
     display: none !important;
     width: 0px;
